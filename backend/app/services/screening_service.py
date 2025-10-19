@@ -163,6 +163,17 @@ class ScreeningService:
                 'positive_ratio': sentiment_data.get('positive_ratio', 0),
                 'negative_ratio': sentiment_data.get('negative_ratio', 0),
                 'neutral_ratio': sentiment_data.get('neutral_ratio', 0),
+                'avg_confidence': sentiment_data.get('avg_confidence', 0.0),
+                'avg_toxicity': sentiment_data.get('avg_toxicity', 0.0),
+                'language': {
+                    'primary': sentiment_data.get('primary_language', 'unknown'),
+                    'distribution': sentiment_data.get('language_distribution', {})
+                },
+                'spam_style': {
+                    'contains_links_ratio': sentiment_data.get('contains_links_ratio', 0.0),
+                    'excessive_caps_ratio': sentiment_data.get('excessive_caps_ratio', 0.0),
+                    'exclamation_avg': sentiment_data.get('exclamation_avg', 0.0)
+                },
                 'concerns': {
                     'profanity': sentiment_data.get('total_profanity', 0),
                     'hate_speech': sentiment_data.get('total_hate_speech', 0),
@@ -185,6 +196,7 @@ class ScreeningService:
             },
             'risk_assessment': scoring_result['risk_flags'],
             'positive_factors': scoring_result['positive_indicators'],
+            'insights': scoring_result.get('insights', {}),
             'generated_at': datetime.utcnow().isoformat()
         }
 

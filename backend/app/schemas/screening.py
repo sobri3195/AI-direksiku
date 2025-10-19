@@ -67,3 +67,7 @@ class ScreeningRequest(BaseModel):
     candidate_id: int
     platforms: Optional[List[str]] = ["linkedin", "twitter", "facebook"]
     deep_analysis: bool = True
+
+
+class TextAnalysisRequest(BaseModel):
+    texts: List[str]
