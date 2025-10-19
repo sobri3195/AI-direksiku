@@ -6,9 +6,12 @@ from app.models.screening import ScreeningResult, DigitalFootprint
 from app.schemas.screening import (
     ScreeningResultResponse,
     ScreeningRequest,
-    DigitalFootprintResponse
+    DigitalFootprintResponse,
+    TextAnalysisRequest,
 )
 from app.services.screening_service import ScreeningService
+from app.services.ai.sentiment_analyzer import SentimentAnalyzer
+from app.services.ai.scoring_engine import ScoringEngine
 
 router = APIRouter()
 
@@ -33,6 +36,34 @@ def start_screening_analysis(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Screening analysis failed: {str(e)}"
         )
+
+
+@router.post("/analyze-text")
+def analyze_texts(request: TextAnalysisRequest):
+    analyzer = SentimentAnalyzer()
+    analyses = analyzer.analyze_batch(request.texts)
+    aggregate = analyzer.calculate_aggregate_sentiment(analyses)
+
+    # Optional: provide a lightweight scoring preview (without social signals)
+    engine = ScoringEngine()
+    scoring_preview = engine.calculate_overall_score(
+        sentiment_data=aggregate,
+        digital_footprints=[],
+        content_analyses=analyses
+    )
+
+    return {
+        "aggregate": aggregate,
+        "items": analyses,
+        "scoring_preview": {
+            "overall_score": scoring_preview.get("overall_score"),
+            "digital_ethics_score": scoring_preview.get("digital_ethics_score"),
+            "sentiment_score": scoring_preview.get("sentiment_score"),
+            "risk_flags": scoring_preview.get("risk_flags"),
+            "positive_indicators": scoring_preview.get("positive_indicators"),
+            "insights": scoring_preview.get("insights"),
+        }
+    }
 
 
 @router.get("/{candidate_id}/results", response_model=List[ScreeningResultResponse])
