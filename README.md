@@ -224,6 +224,7 @@ Terima kasih kepada:
 
 - **Email**: [muhammadsobrimaulana31@gmail.com](mailto:muhammadsobrimaulana31@gmail.com)
 - **GitHub**: [github.com/sobri3195](https://github.com/sobri3195)
+- **Website**: [muhammadsobrimaulana.netlify.app](https://muhammadsobrimaulana.netlify.app)
 - **YouTube**: [Muhammad Sobri Maulana](https://www.youtube.com/@muhammadsobrimaulana6013)
 - **Telegram**: [@winlin_exploit](https://t.me/winlin_exploit)
 - **TikTok**: [@dr.sobri](https://www.tiktok.com/@dr.sobri)
@@ -232,7 +233,11 @@ Terima kasih kepada:
 
 Jika Anda merasa proyek ini bermanfaat, Anda dapat mendukung pengembangan lebih lanjut melalui:
 
-- **Donasi**: [https://lynk.id/muhsobrimaulana](https://lynk.id/muhsobrimaulana)
+- **Lynk.id**: [https://lynk.id/muhsobrimaulana](https://lynk.id/muhsobrimaulana)
+- **Trakteer**: [https://trakteer.id/g9mkave5gauns962u07t](https://trakteer.id/g9mkave5gauns962u07t)
+- **Gumroad**: [maulanasobri.gumroad.com](https://maulanasobri.gumroad.com/)
+- **Karya Karsa**: [https://karyakarsa.com/muhammadsobrimaulana](https://karyakarsa.com/muhammadsobrimaulana)
+- **Nyawer**: [https://nyawer.co/MuhammadSobriMaulana](https://nyawer.co/MuhammadSobriMaulana)
 
 ### 👥 Join Our Community
 
